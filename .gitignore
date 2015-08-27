@@ -3,6 +3,11 @@
 *.so
 *.rlib
 *.dll
+*.py[c|o]
+*.sw[p|o]
+
+# Virtual Environment
+env
 
 # Executables
 *.exe
