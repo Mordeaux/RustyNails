@@ -11,7 +11,7 @@ if platform == "darwin":
 else:
     ext = "so"
 
-rust_lib_path = os.path.join(DIRECTORY, 'target/release/librusty_nails.{}').format(ext)
+rust_lib_path = os.path.join(DIRECTORY, '../rust/rusty_nails/target/release/librusty_nails.{}').format(ext)
 
 lib = cdll.LoadLibrary(rust_lib_path)
 lib.process()
