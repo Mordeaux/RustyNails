@@ -9,4 +9,4 @@ else:
 lib = cdll.LoadLibrary('target/release/librusty_nails.' + ext)
 lib.process()
 
-print("done!")
+print("Python is done!")

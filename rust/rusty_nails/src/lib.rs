@@ -17,8 +17,8 @@ pub extern fn process() {
     }).collect();
 
     for h in handles {
-        println!("Thread finished with count={}",
+        println!("Thread finished at count={}",
         h.join().map_err(|_| "Could not join a thread!").unwrap());
     }
-    println!("done!");
+    println!("Rust is done!");
 }
