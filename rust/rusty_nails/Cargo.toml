@@ -1,4 +1,13 @@
 [package]
 name = "rusty_nails"
 version = "0.1.0"
-authors = ["Michael T. Mordowanec <michael.mordowanec@gmail.com>"]
+authors = ["Michael T. Mordowanec <michael.mordowanec@gmail.com>",
+           "Vivian Keating <vkeat660@gmail.com>",
+           "Bobby Yankou <thisisjackolantern@gmail.com>"]
+
+
+[lib]
+name = "rusty_nails"
+crate-type = ["dylib"]
+
+
