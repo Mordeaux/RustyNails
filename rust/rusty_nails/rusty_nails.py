@@ -1,7 +1,12 @@
 from ctypes import cdll
+from sys import platform
 
-lib = cdll.LoadLibrary("target/release/librusty_nails.dylib")
+if platform == "darwin":
+    ext = "dylib"
+else:
+    ext = "so"
 
+lib = cdll.LoadLibrary('target/release/librusty_nails.' + ext)
 lib.process()
 
 print("done!")
