@@ -1,5 +1,13 @@
-count = 0
-for x in xrange(0,50000000): 
-    count += 1
+import thread
 
-print count
+
+def main():
+    count = 0
+    for i in xrange(50000000): 
+        count += 1
+
+    print "thread finished at count: {}".format(x)
+    print "python is done"
+
+if __name__ == '__main__':
+    main()
