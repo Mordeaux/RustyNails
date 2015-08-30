@@ -1,3 +1,8 @@
+extern crate libc;
+
+use std::str;
+use std::ffi::CStr;
+use self::libc::c_char;
 
 #[repr(C)]
 pub struct LinearRegression {
@@ -29,9 +34,16 @@ impl LinearRegression {
 }
 
 #[no_mangle]
-pub extern "C" fn init_regression(input: u32, name: &str) -> LinearRegression {
+pub extern "C" fn init_regression(input: u32, name: *const c_char) -> LinearRegression {
     println!("func input: {}", input);
-    LinearRegression::new(name.to_string(), input)
+    let name_cstring = unsafe {
+        CStr::from_ptr(name)
+    };
+    let name_bytes = name_cstring.to_bytes();
+    match str::from_utf8(name_bytes) {
+        Ok(s) => LinearRegression::new(s.to_string(), input),
+        Err(_) => LinearRegression::new("failed".to_string(), 0u32)
+    }
 }
 
 #[no_mangle]

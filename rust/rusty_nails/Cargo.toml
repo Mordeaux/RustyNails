@@ -5,9 +5,9 @@ authors = ["Michael T. Mordowanec <michael.mordowanec@gmail.com>",
            "Vivian Keating <vkeat660@gmail.com>",
            "Bobby Yankou <thisisjackolantern@gmail.com>"]
 
+[dependencies]
+libc = "0.1.10"
 
 [lib]
 name = "rusty_nails"
 crate-type = ["dylib"]
-
-
