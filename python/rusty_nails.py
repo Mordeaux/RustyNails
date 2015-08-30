@@ -1,28 +1,10 @@
-import os
-from ctypes import cdll
-from sys import platform
+from config import rusty_nails
 
-# Get the absolute path of the current directory so this file can be
-# called from outside its home directory.
-DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
-if platform == "darwin":
-    ext = "dylib"
-else:
-    ext = "so"
+def threaded_incrementor():
+    rusty_nails.process()
+    print("Python is done!")
 
-rust_lib_path = os.path.join(
-        DIRECTORY,
-        os.pardir,
-        'rust',
-        'rusty_nails',
-        'target',
-        'release',
-        'librusty_nails.{}').format(ext)
 
-lib = cdll.LoadLibrary(rust_lib_path)
-lib.process()
-
-print("Python is done!")
-
-lib.linear_regression()
+if __name__ == '__main__':
+    threaded_incrementor()
