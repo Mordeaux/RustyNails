@@ -2,7 +2,10 @@ mod regression;
 
 
 use std::thread;
-pub use regression::linear_regression;
+pub use regression::{
+    init_regression,
+    process_regression
+};
 
 
 #[no_mangle]
@@ -23,3 +26,5 @@ pub extern fn process() {
     }
     println!("Rust is done!");
 }
+
+
