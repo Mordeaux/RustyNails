@@ -26,5 +26,3 @@ pub extern fn process() {
     }
     println!("Rust is done!");
 }
-
-

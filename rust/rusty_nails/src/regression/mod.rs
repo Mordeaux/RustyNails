@@ -29,13 +29,13 @@ impl LinearRegression {
 }
 
 #[no_mangle]
-pub extern fn init_regression(name: &str, input: u32) -> LinearRegression {
+pub extern "C" fn init_regression(input: u32, name: &str) -> LinearRegression {
     println!("func input: {}", input);
     LinearRegression::new(name.to_string(), input)
 }
 
 #[no_mangle]
-pub extern fn process_regression(linear_regression: &mut LinearRegression) -> u32 {
+pub extern "C" fn process_regression(linear_regression: &mut LinearRegression) -> u32 {
     linear_regression.process();
     linear_regression.get_output()
 }
