@@ -20,5 +20,5 @@ class LinearRegression(Structure):
 rusty_nails.init_regression.restype = LinearRegression
 
 if __name__ == '__main__':
-    linear_regression = rusty_nails.init_regression(500, u'mordeaux')
+    linear_regression = rusty_nails.init_regression(500, 'mordeaux')
     linear_regression.process()
