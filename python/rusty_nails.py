@@ -24,3 +24,5 @@ lib = cdll.LoadLibrary(rust_lib_path)
 lib.process()
 
 print("Python is done!")
+
+lib.linear_regression()

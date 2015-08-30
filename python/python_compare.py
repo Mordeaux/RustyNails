@@ -1,7 +1,6 @@
 from multiprocessing import Process
 
 
-
 def single_thread():
     count = 0
     for i in xrange(50000000): 
@@ -28,6 +27,7 @@ def multithread():
         thread.join()
 
     print "python is done"
+
 
 if __name__ == '__main__':
     multithread()

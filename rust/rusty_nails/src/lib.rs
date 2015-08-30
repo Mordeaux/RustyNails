@@ -1,8 +1,6 @@
-#[test]
-fn it_works() {
-}
-
 use std::thread;
+
+mod regression;
 
 #[no_mangle]
 pub extern fn process() {
@@ -21,4 +19,9 @@ pub extern fn process() {
         h.join().map_err(|_| "Could not join a thread!").unwrap());
     }
     println!("Rust is done!");
+}
+
+#[no_mangle]
+pub extern fn linear_regression() {
+    regression::linear_regression();
 }
