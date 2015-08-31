@@ -14,7 +14,7 @@ class LinearRegression(Structure):
             ('output', c_void_p)]
 
     def process(self):
-        print rusty_nails.process_regression(byref(self))
+        rusty_nails.process_regression(byref(self))
 
 
 rusty_nails.init_regression.restype = LinearRegression

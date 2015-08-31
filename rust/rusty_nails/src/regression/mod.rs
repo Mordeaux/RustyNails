@@ -27,7 +27,10 @@ impl LinearRegression {
     }
     fn get_output(&mut self) -> u32 {
         match self.output {
-            Some(i) => i,
+            Some(i) => {
+                println!("{}", i);
+                i
+            },
             None => 0
         }
     }
